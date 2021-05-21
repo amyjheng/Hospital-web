@@ -21,7 +21,7 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;
+	/* vertical-align: baseline; */
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -97,25 +97,84 @@ tr{
     height: 10%;
 
 }
+.tdfirst{
+    font-size: 10px;
+    text-align: center;
+
+}
 tbody>tr:nth-child(even){
     background-color:white;
     border: white 1px solid;
+    text-align: center;
 }
 
 tbody>tr:nth-child(odd){
     background-color: #eeefe7;
     border: white 1px solid;
+    text-align: center;
 }
 
 thead>tr{
  color:white;
+ height: 20px;
  background-color: #e44e69;
+ text-align: center;
 }
    
 .float{
-    height: 100px;
-    width: 100px;
-    color: blue;
+    height: 160px;
+    width: 50px;
+    background-color: #e44e69;
+    border-radius: 0.5em;
     float: left;
     transform: translate(0%,-120%);
+    vertical-align:middle;
+    color:white;
+    margin-top: 2rem;
+}
+.float1{
+    height: 100px;
+    width: 40px;
+    background-color: #e44e69;
+    border-radius: 0.5em;
+    float: left;
+    transform: translate(0%,-120%);
+    vertical-align:middle;
+    color:white;
+    margin-bottom: 5rem;
+}
+.float2{
+    height: 100px;
+    width: 40px;
+    background-color: #2D67F6;
+    border-radius: 0.5em;
+    float: right;
+    transform: translate(0%,-120%);
+    vertical-align:middle;
+    color:white;
+}
+.left{
+    width: 100%; 
+    background-color:white;
+    height:60%;
+    border-style: solid;
+    border-color: aqua;
+}
+
+.right{
+    width: 100%; 
+    background-color:white;
+    height:60%;
+    border-style: solid;
+    border-color: aqua;
+}
+.numberNow{
+    margin-left: auto;
+    margin-right: auto;
+    width: 8em;
+    font-size: 3.0rem; 
+    color: red;
+    text-align: center; 
+    align-items: center;
+
 }

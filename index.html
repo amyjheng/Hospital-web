@@ -8,47 +8,61 @@
     <link href="public/css/custom.css" rel="stylesheet">
 </head>
 <body>
-    <div class="main">
+    <div id="main" class="main">
         <div style="width: 100%;background-color:#2D67F6;height:20%;">
-            <div style="width:100%; background-color: #2D67F6; height: 50%; font-size: 3rem; text-align: center; color: #fdfbec; font-weight: 200;">
-                科室
+            <div style="width:100%; background-color: #2D67F6; height: 50%; font-size: 2rem; text-align: center; color: #fdfbec; font-weight: 200;">
+                {{department}}
             </div>
             <div style="display: flex; height:50%;">
                 <div style="width: 50%;padding: 0px 10px;">
                     <span style="color: white; font-size: 1.0rem;">醫師</span>
-                    <div style="background-color: white;height:50%; border-radius: 5px;">
+                    <div style="background-color: white;height:50%; border-radius: 5px;display:flex; align-items: center;">
                         <img src="public/image/stethoscope.png" style="height:80%;margin-top: calc(2.5vh-20px);">
-                        <span style="font-size: 1.0rem;">楊醫師</span>
-                     
+                        <span style="font-size: 1.0rem;">{{doctor}}</span>                  
                     </div>               
                 </div>
                 <div style="width: 50%;padding: 0px 10px;">
                     <span style="width:50%;color: white;font-size: 1.0rem;">護理師</span>
-                    <div style="background-color: white;height:50%; border-radius: 5px;">
+                    <div style="background-color: white;height:50%; border-radius: 5px;display:flex; align-items: center">
                         <img src="public/image/needle.png" style="height:80%;margin-top: calc(2.5vh-20px);">
-                        <span style="font-size: 1.0rem;">李護士</span>
+                        <span style="font-size: 1.0rem;">{{nurse}}</span>
                     </div>
                 </div>                  
             </div>
         </div>
 
-        <div style="width: 100%; background-color:white;height:20%;">
-
+        <div style="display: flex; height:5vh;">
+            <div style="width: 50%;padding: 5px;">
+                <div style="background-color: #eeefe7;height:7.5rem; border-radius: 5px;display:flex; align-items: center;">
+                    <span class="numberNow">{{numberNow}}</span>                  
+                </div>            
+            </div>
+            <div style="width: 50%;padding: 5px;">
+                <div style="background-color: #eeefe7;height:7.5rem; border-radius: 5px;display:flex; align-items: center">      
+                <span></span>
+                </div>
+            </div>
         </div>
+        <div class="float1">
+            目前號碼
+          </div>
+          <div class="float2">
+            下一號
+          </div>
         <div style="width: 100%;height:35%;">
             <table>
                 <thead>
                     <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
+                        <td class="tdfirst">看診號</td>
+                        <td class="tdfirst">病人姓名</td>
+                        <td class="tdfirst">看診狀態</td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
+                        <td>{{row1}}</td>
+                        <td>{{name1}}</td>
+                        <td>{{status1}}</td>
                     </tr>
                     <tr>
                         <td>1</td>
@@ -82,6 +96,10 @@
                     </tr>
                 </tbody>
             </table>
+            <div class="float">
+              候診名單
+
+            </div>
         </div>
         <div style="width: 100%;background-color:#E4FEFF;height:20%;">
 
@@ -89,6 +107,22 @@
     </div>
 
     </div>
-
 </body>
+<script src="public/js/vue.js"></script>
+<script type="text/javascript">
+    var main = new Vue({
+        el:"#main",
+        data:{
+            department:"兒科(一診)",
+            doctor:"楊醫生",
+            nurse:"李護士",
+            row1:"007",
+            name1:"郭雅年",
+            status1:"現場掛號",
+            numberNow:3
+            
+        }
+
+    })
+</script>
 </html>
