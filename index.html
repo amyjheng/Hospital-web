@@ -10,8 +10,7 @@
 <body>
     <div id="main" class="main">
         <div style="width: 100%;background-color:#2D67F6;height:20%;">
-            <div style="width:100%; background-color: #2D67F6; height: 50%; font-size: 2rem; text-align: center; color: #fdfbec; font-weight: 200;">
-                {{department}}
+            <div style="width:100%; background-color: #2D67F6; height: 50%; font-size: 2rem; text-align: center; color: #fdfbec; font-weight: 200;"v-text="department">
             </div>
             <div style="display: flex; height:50%;">
                 <div style="width: 50%;padding: 0px 10px;">
@@ -59,12 +58,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr id="tr1">
                         <td>{{row1}}</td>
                         <td>{{name1}}</td>
                         <td>{{status1}}</td>
                     </tr>
-                    <tr>
+                    <tr id="tr2">
                         <td>1</td>
                         <td>2</td>
                         <td>3</td>
@@ -96,10 +95,15 @@
                     </tr>
                 </tbody>
             </table>
-            <div class="float">
+            <div class="float" >
               候診名單
-
             </div>
+        </div>
+        <div class="box4">
+            <div style="background-color: blue;height: 20%;width: 100%;">
+                公佈欄
+            </div>
+            1.您好 ! 防疫期間請配戴口罩!
         </div>
         <div style="width: 100%;background-color:#E4FEFF;height:20%;">
 
@@ -109,6 +113,7 @@
     </div>
 </body>
 <script src="public/js/vue.js"></script>
+<script src="public/js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
     var main = new Vue({
         el:"#main",
@@ -121,8 +126,22 @@
             status1:"現場掛號",
             numberNow:3
             
-        }
+        },
+        
 
-    })
+    });
+
+    function display(){
+        $.getJSON("case.json" , function(json_data){
+           // console.log(json_data[0]['name']);
+           let number=json_data[0]['number'];
+           let name=json_data[0]['name'];
+           let status=json_data[0]['status'];
+           $("#tr1 td:nth-child(1)").text(number);
+
+        });
+
+        
+    }
 </script>
 </html>
