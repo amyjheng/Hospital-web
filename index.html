@@ -61,36 +61,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr id="tr1">
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    <tr v-for="item in data_show">
+                        <td v-text="item.number"></td>
+                        <td v-text="item.name"></td>
+                        <td v-text="item.status"></td>
                     </tr>
-                    <tr id="tr2">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr id="tr3">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr id="tr4">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr id="tr5">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr id="tr6">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                    
+                
                 </tbody>
             </table>
             <div class="float">
@@ -114,17 +91,77 @@
             department:"兒科(一診)",
             doctor:"楊醫生",
             nurse:"李護士",
-            row1:"007",
+            number:"看診號",
             name1:"郭雅年",
             status1:"現場掛號",
-            numberNow:3
+            numberNow:3,
+            data_show:[{
+                "ID": "1201",
+                "number": "01",
+                "name": "趙" ,
+                "status": "現場掛號"
+            }],
+            order:0, //目前要顯示的病人
+            case_json:[
+            {
+                "ID": "1201",
+                "number": "01",
+                "name": "趙" ,
+                "status": "現場掛號"
+            },
+            {
+                "ID": "0231",
+                "number": "02",
+                "name": "錢" ,
+                "status": "現場掛號"
+            },
+            {
+                "ID": "5232",
+                "number": "03",
+                "name": "孫" ,
+                "status": "現場掛號"
+            },
+            {
+                "ID": "7239",
+                "number": "04",
+                "name": "李" ,
+                "status": "現場掛號"
+            },
+            {
+                "ID": "0881",
+                "number": "05",
+                "name": "周" ,
+                "status": "現場掛號"
+            },
+            {
+                "ID": "6222",
+                "number": "06",
+                "name": "吳" ,
+                "status": "現場掛號"
+            },
+            {
+                "ID": "5820",
+                "number": "07",
+                "name": "鄭" ,
+                "status": "現場掛號"
+            },
+            {
+                "ID": "1154",
+                "number": "08",
+                "name": "王" ,
+                "status": "現場掛號"
+            }
+        ],
+       
             
         },
         mounted: function () {
-            setInterval("display()", 3000);
+
+            setInterval(function(){
+                    console.log("2");
+                }, 3000);
         }
     });
-    let order=0; //紀錄顯示到第幾個病人
     function display(){
         $.getJSON("case.json", function(json_data){
             
