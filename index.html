@@ -71,11 +71,6 @@
                         <td></td>
                         <td></td>
                     </tr>
-                    <tr id="tr2">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
                     <tr id="tr3">
                         <td></td>
                         <td></td>
@@ -113,7 +108,6 @@
 <script src="public/js/vue.js"></script>
 <script src="public/js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
-    var order= 0;
     var main = new Vue({
         el:"#main",
         data:{
@@ -130,11 +124,32 @@
             setInterval("display()", 3000);
         }
     });
-
+    let order=0; //紀錄顯示到第幾個病人
     function display(){
         $.getJSON("case.json", function(json_data){
-            let number = json_data[0]['number'];
-            $("#tr1 td:nth-child(1)").text(number);
+            
+            $("tbody td").text("");
+            for (let index = 0; index < 6; index++) {
+                //code
+                let id_string = "#tr"+(index+1);
+                
+                let number = json_data[order]['number'];
+                let name = json_data[order]['name'];
+                let status = json_data[order]['status'];
+                $(id_string+" td:nth-child(1)").text(number);
+                $(id_string+" td:nth-child(2)").text(name);
+                $(id_string+" td:nth-child(3)").text(status);
+                
+                console.log(order);
+
+                if(order == json_data.length-1){
+                    order=0;
+                    //break;
+                }else{
+                    order++;
+
+                }
+            }
         });
     }
 
