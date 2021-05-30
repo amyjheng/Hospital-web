@@ -198,6 +198,16 @@ thead>tr{
     align-items: center;
 
 }
+.numberNow2{
+    margin-left: auto;
+    margin-right: auto;
+    margin: auto;
+    font-size: 6.3rem; 
+    color: blue;
+    text-align: center; 
+    align-items: center;
+
+}
 
 .box4{
     width:100%; 
