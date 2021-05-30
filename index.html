@@ -46,7 +46,7 @@
                         <span style="vertical-align: middle;  color:white;">下一號</span>
                     </div>
                     <div class="numberNow2" style="background-color: #eeefe7; height: 85%; width: 100%; border-radius: 5px 5px 0px 0px; padding: auto;">
-                        <span style="vertical-align: middle;">{{numberNow+1}}</span>
+                        <span style="vertical-align: middle;">{{numberNext}}</span>
                     </div>
                 </div>
             </div>
@@ -78,11 +78,19 @@
             </div>
             1. 您好，為維護門診寧靜，請您注意音量
         </div>
-        <div>
-            <button @click="" style="font-size:14px;">Up</button>
-            <input v-model="" style="width:40px; font-size:14px;">
-            <button @click="" style="font-size:14px;">Down</button>
+        <div style="display: flex;">
+            <div style="width: 50vw;">
+                <button v-on:click="down('1');" style="font-size:14px;">Down</button>
+                <input  v-model="numberNow" type="number" style="width:40px; font-size:14px;">
+                <button @click="up('1');" style="font-size:14px;">Up</button>
+            </div>
+            <div div style="width: 50vw;">
+                <button v-on:click="down('2');" style="font-size:14px;">Down</button>
+                <input  v-model="numberNext" type="number" style="width:40px; font-size:14px;">
+                <button @click="up('2');" style="font-size:14px;">Up</button>
+            </div>
         </div>
+        
     </div>
 </body>
 <script src="public/js/vue.js"></script>
@@ -97,6 +105,7 @@
             number:"看診號",
             status:"看診狀態",
             numberNow:3,
+            numberNext:"",
             data_show:[[],[],[],[],[],[]],
             order:0, //目前要顯示的病人
             case_json:[
@@ -201,7 +210,41 @@
                         main.order=0;
                     }
                 }, 3000);
-        }
+        },
+        methods: {
+            down(choice) {
+                if(choice=="1"){
+                    if(main.numberNow>1){
+                        main.numberNow--;
+                    };
+                }else{
+                    if(main.numberNext>1){
+                        main.numberNext--;
+                    };
+                }
+            },
+            up(choice) {
+                if(choice=="1"){
+                    if(main.numberNow < main.case_json[main.case_json.length-1]['number']){
+                        main.numberNow ++;
+                    }
+                }else{
+                    if(main.numberNext < main.case_json[main.case_json.length-1]['number']){
+                        main.numberNext ++;
+                    }
+                }
+            },
+            // downnext(){
+            //     if(main.numberNext > 1){
+            //         main.numberNext--;
+            //     };
+
+            // },
+            // upnext(){
+            //     main.numberNext ++;
+
+            // },
+        },
     });
     function display(){
         $.getJSON("case.json", function(json_data){
@@ -209,7 +252,7 @@
             $("tbody td").text("");
             for (let index = 0; index < 6; index++) {
                 //code
-                let id_string = "#tr"+(index+1);
+                let id_string = "#tr"(index+1);
                 
                 let number = json_data[order]['number'];
                 let name = json_data[order]['name'];
@@ -229,5 +272,6 @@
             }
         });
     }
-</script>
+
+    </script>
 </html>
