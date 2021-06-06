@@ -76,11 +76,22 @@
             <div style="background-color: blue; height: 15%; width: 100%; color: white; text-align: center; align-items: center; border-radius: 5px 5px 0px 0px;">
                 <span style="vertical-align: middle;">公佈欄</span>
             </div>
-            1. 您好，為維護門診寧靜，請您注意音量
+            <!-- 1. 您好，為維護門診寧靜，請您注意音量 -->
+            一起守護台灣，請您務必配戴口罩及消毒雙手 
+            <div class="ffont">
+               
+            </div>
+            <div>
+                <span></span>
+            </div>
+            <div class="ffont">
+            謝謝配合 祝您早日康復!    
+            </div>
         </div>
         <div style="display: flex;">
             <div style="width: 50vw;">
-                <button v-on:click="down('1');" style="font-size:14px;">Down</button>
+                <button v-on:click="down('1');"type="button" class="btn btn-outline-info">Down</button>
+                <!-- <button  style="font-size:14px;"></button> -->
                 <input  v-model="numberNow" type="number" style="width:40px; font-size:14px;">
                 <button @click="up('1');" style="font-size:14px;">Up</button>
             </div>
@@ -95,13 +106,14 @@
 </body>
 <script src="public/js/vue.js"></script>
 <script src="public/js/jquery-3.6.0.min.js"></script>
+<scrip src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript">
     var main = new Vue({
         el:"#main",
         data:{
             department:"兒科(一診)",
-            doctor:"楊醫生",
-            nurse:"李護士",
+            doctor:"金宣虎",
+            nurse:"宋慧喬",
             number:"看診號",
             status:"看診狀態",
             numberNow:3,
@@ -112,79 +124,79 @@
                     {
                         "ID": "1201",
                         "number": "01",
-                        "name": "趙" ,
+                        "name": "趙薇" ,
                         "status": "現場掛號"
                     },
                     {
                         "ID": "0231",
                         "number": "02",
-                        "name": "錢" ,
-                        "status": "現場掛號"
+                        "name": "錢夫人" ,
+                        "status": "網路預約"
                     },
                     {
                         "ID": "5232",
                         "number": "03",
-                        "name": "孫" ,
+                        "name": "孫小美" ,
                         "status": "現場掛號"
                     },
                     {
                         "ID": "7239",
                         "number": "04",
-                        "name": "李" ,
-                        "status": "現場掛號"
+                        "name": "李逍遙" ,
+                        "status": "網路預約"
                     },
                     {
                         "ID": "0881",
                         "number": "05",
-                        "name": "周" ,
+                        "name": "周星馳" ,
                         "status": "現場掛號"
                     },
                     {
                         "ID": "6222",
                         "number": "06",
-                        "name": "吳" ,
+                        "name": "吳亦凡" ,
                         "status": "現場掛號"
                     },
                     {
                         "ID": "5820",
                         "number": "07",
-                        "name": "鄭" ,
+                        "name": "鄭成功" ,
                         "status": "現場掛號"
                     },
                     {
                         "ID": "1154",
                         "number": "08",
-                        "name": "王" ,
-                        "status": "現場掛號"
+                        "name": "王陽明" ,
+                        "status": "電話掛號"
                     },
                     {
                         "ID": "254",
                         "number": "09",
-                        "name": "郭" ,
-                        "status": "現場掛號"
+                        "name": "郭靖" ,
+                        "status": "網路預約"
                     },
                     {
                         "ID": "4210",
                         "number": "10",
-                        "name": "林" ,
-                        "status": "現場掛號"
+                        "name": "林心如" ,
+                        "status": "電話掛號"
                     },
                     {
                         "ID": "214",
                         "number": "11",
-                        "name": "張" ,
-                        "status": "現場掛號"
+                        "name": "張娜拉" ,
+                        "status": "網路預約"
                     },
                     {
                         "ID": "2154",
                         "number": "12",
-                        "name": "吳" ,
+                        "name": "金貝貝" ,
                         "status": "現場掛號"
                     },   
                     {
                         "ID": "2159",
                         "number": "13",
-                        "name": "李先生" ,
+                        "name": "陳零九" ,
                         "status": "現場掛號"
                     },
                     ],
