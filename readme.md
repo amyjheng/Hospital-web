@@ -2,9 +2,9 @@
 ## 醫院診間報到系統 
 &copy;Amy Jheng
 
--This check-in system is a simple display screen, 
--A perspicuous design to let you know all the current status.
--Let's Check it out !
+- This check-in system is a simple display screen, 
+- A perspicuous design to let you know all the current status.
+- Let's Check it out !
 
 ## Features
 - Based on HTML5 & CSS3
